@@ -4,23 +4,27 @@
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
   <script>
-    // Extract ID from path
     const id = window.location.pathname.split("/").filter(Boolean).pop();
-
-    // Build your custom URI
     const deepLink = `uselessweb://site?id=${id}`;
-
-    // Replace with your actual app's Play Store URL
     const playStoreUrl = "https://play.google.com/store/apps/details?id=com.tilseier.asmrmicrophonesimulator";
 
-    // Try to open the app
-    const timeout = setTimeout(() => {
-      // Fallback to Play Store after 1500ms if app is not installed
-      window.location.href = playStoreUrl;
-    }, 1500);
+    // Try to open the deep link
+    const openApp = () => {
+      const a = document.createElement('a');
+      a.href = deepLink;
+      a.style.display = 'none';
+      a.setAttribute('target', '_self');
+      document.body.appendChild(a);
+      a.click();
+    };
 
-    // Attempt to launch the app
-    window.location.href = deepLink;
+    // Try to open app, fallback after delay
+    window.onload = () => {
+      openApp();
+      setTimeout(() => {
+        window.location.href = playStoreUrl;
+      }, 1500);
+    };
   </script>
 </head>
 <body>
