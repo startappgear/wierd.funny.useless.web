@@ -8,7 +8,7 @@ Every time you open the app or click a link, you'll be taken to a quirky or comp
 
 ## 📲 Get the App
 
-👉 [Download on Google Play](https://play.google.com/store/apps/details?id=com.tilseier.asmrmicrophonesimulator)
+👉 [Download on Google Play](https://play.google.com/store/apps/details?id=com.tilseier.bored.weird.games.useless.websites)
 
 ---
 
